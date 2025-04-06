@@ -53,7 +53,11 @@
     </div>
     <script type="text/javascript">
         document.getElementById('no-script').remove();
-        console.log(window.location.href);
+        const betaDomain = 'https://cayrac.github.io/beta';
+        if (window.location.href.startsWith(betaDomain)) {
+            const route = window.location.href.substr(betaDomain.length);
+            window.location = betaDomain + '?route=' + route
+        }
     </script>
 <script src="runtime.f27ae7d60942cb4e.js" type="module"></script><script src="polyfills.dc92ccdbf9af3f09.js" type="module"></script><script src="main.81093207e1c43b31.js" type="module"></script>
 
